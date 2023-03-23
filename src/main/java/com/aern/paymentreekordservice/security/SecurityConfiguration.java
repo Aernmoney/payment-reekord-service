@@ -76,9 +76,9 @@ public class SecurityConfiguration {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .requestMatchers((requestMatchers) -> {
-                    requestMatchers.antMatchers("/api/v1/onboard/customer-detail","/api/v1/onboard/login");
-                })
-                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+                    requestMatchers.antMatchers("/api/v1/onboard/customer-detail","/api/v1/onboard/login",
+                            "/api/v1/onboard/resend-otp");
+                }).authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .csrf(AbstractHttpConfigurer::disable)
                 .exceptionHandling(ex -> {

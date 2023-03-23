@@ -5,6 +5,7 @@ import com.aern.paymentreekordservice.model.AuthenticationResponse;
 import com.aern.paymentreekordservice.model.BankDetail;
 import com.aern.paymentreekordservice.model.CustomerDetail;
 import com.aern.paymentreekordservice.model.KycDetail;
+import com.aern.paymentreekordservice.model.ResendOtp;
 import com.aern.paymentreekordservice.resource.api.OnBoardApi;
 import com.aern.paymentreekordservice.service.AuthenticationService;
 import com.aern.paymentreekordservice.service.BankService;
@@ -54,6 +55,12 @@ public class OnBoardController implements OnBoardApi {
     @Override
     public ResponseEntity<?> bankDetails(String phoneNumber, BankDetail bankDetail) {
         bankService.updateBankDetails(phoneNumber,bankDetail);
+        return ResponseEntity.status(HttpStatus.OK).body("");
+    }
+
+    @Override
+    public ResponseEntity<?> resendOtp(ResendOtp resendOtp) {
+        onBoardService.resendOtp(resendOtp);
         return ResponseEntity.status(HttpStatus.OK).body("");
     }
 }

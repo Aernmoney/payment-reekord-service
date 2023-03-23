@@ -5,6 +5,7 @@ import com.aern.paymentreekordservice.model.AuthenticationResponse;
 import com.aern.paymentreekordservice.model.BankDetail;
 import com.aern.paymentreekordservice.model.CustomerDetail;
 import com.aern.paymentreekordservice.model.KycDetail;
+import com.aern.paymentreekordservice.model.ResendOtp;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,4 +31,7 @@ public interface OnBoardApi {
     @PutMapping(path = "/bank-detail/{phoneNumber}" , consumes = {"application/json"})
     ResponseEntity<?> bankDetails(@PathVariable String phoneNumber,
                                   @RequestBody BankDetail bankDetail);
+
+    @PostMapping(path = "/resend-otp")
+    ResponseEntity<?> resendOtp(@RequestBody ResendOtp resendOtp);
 }

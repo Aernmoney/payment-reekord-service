@@ -21,6 +21,8 @@ repositories {
 dependencies {
 	implementation 'com.amazonaws:aws-java-sdk-s3:1.12.428'
 	implementation 'com.amazonaws:aws-java-sdk-sns:1.12.349'
+	implementation 'org.springdoc:springdoc-openapi-security:1.6.14'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
